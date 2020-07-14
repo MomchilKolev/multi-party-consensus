@@ -15,4 +15,13 @@ contract('Users', accs => {
     assert.equal(+user.id, 1)
     assert.equal(+user.role, 1)
   })
+  it("Deactivate contract", async () => {
+    try {
+      const instance = await Users.deployed()
+      await instance.setOperational(false);
+      await instance.register(1, { from: accs[2] })
+    } catch (err) {
+      assert.equal(err.reason, "Contract is not operational")
+    }
+  })
 })
