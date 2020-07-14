@@ -1,3 +1,5 @@
 # multi-party-consensus
 
-Implementing multi-party consensus
+Implement multi-party consensus
+
+- Github sync
